@@ -10,14 +10,15 @@ import Foundation
 struct Task {
     var title: String
     var description: String
-    var tag: Tag
+    var tag: Tag?
     
-    var priority: Priority
-    var dueDate: Date
-    var estimatedTime: Int
-    var trackedTime: Int
-    var project: Project
-    var status: Status
+    var priority: Priority = .medium
+    var dueDate: Date?
+    var estimatedTime: Int?
+    var trackedTime: Int = 0
+    var project: Project?
+    var status: Status = .created
+    
 }
 
 enum Priority {
@@ -30,19 +31,19 @@ enum Status {
     case done
     case inProgress
     case notStarted
-    case new
+    case created
 }
 
 struct Project {
     var title: String
     var description: String
-    var taskList: [Task]
+    var taskList: [Task]?
     
-    var dueDate: Date
-    var estimatedTime: Int
-    var trackedTime: Int
-    var theme: Theme
-    var status: Status
+    var dueDate: Date?
+    var estimatedTime: Int?
+    var trackedTime: Int = 0
+    var theme: Theme?
+    var status: Status = .created
 }
 
 struct Theme {
@@ -56,10 +57,10 @@ struct Tag {
 struct Habit {
     var title: String
     var description: String
-    var tag: Tag
+    var tag: Tag?
     var goal: Int
     var type: HabitType
-    var statistic: [Int]
+    var statistic: [Int] = []
 }
 
 enum HabitType {
