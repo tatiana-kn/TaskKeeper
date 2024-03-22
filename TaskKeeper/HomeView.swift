@@ -8,11 +8,15 @@
 import SwiftUI
 
 struct HomeView: View {
+    var tasks: [Task]
+    
     var body: some View {
-        Text("Home")
+        List(tasks) { task in
+            Text("\(task.title)")
+        }
     }
 }
 
 #Preview {
-    HomeView()
+    HomeView(tasks: Task.sampleTask)
 }

@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct MainView: View {
+    var tasks: [Task]
+    
     var body: some View {
         TabView {
-            HomeView()
+            HomeView(tasks: tasks)
                 .tabItem {
                     Image(systemName: "house")
                 }
@@ -27,5 +29,5 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    MainView(tasks: Task.sampleTask)
 }
