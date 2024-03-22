@@ -8,14 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var name = ""
+    @State private var password = ""
+    @FocusState var isInputActive: Bool
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            VStack {
+                VStack {
+                    Text("Create new account")
+                        .font(.title)
+                    
+                    TextField("Enter your name", text: $name)
+                        .textFieldStyle(.roundedBorder)
+                        .focused($isInputActive)
+        
+                    TextField("Enter your email", text: $password)
+                        .textFieldStyle(.roundedBorder)
+                        .focused($isInputActive)
+                    
+                    Button("CREARE ACCOUNT", action: {})
+                        .padding()
+                }
+                .padding()
+                Spacer()
+                Text("Already have an account?")
+                    .font(.title3)
+                Button("LOG IN", action: {})
+                    .padding()
+                
+            }
         }
-        .padding()
+        .onTapGesture {
+            isInputActive = false
+        }
     }
 }
 
