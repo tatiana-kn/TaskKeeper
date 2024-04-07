@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct ProjectsView: View {
+    var projects: [Project]
+    
     var body: some View {
-        Text("Projects")
+        List(projects) { project in
+            ProjectCardView(project: project)
+                .listRowBackground(project.theme?.mainColor)
+        }
     }
 }
 
 #Preview {
-    ProjectsView()
+    ProjectsView(projects: Project.sampleProject)
 }

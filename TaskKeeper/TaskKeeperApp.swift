@@ -11,7 +11,7 @@ import SwiftUI
 struct TaskKeeperApp: App {
     var body: some Scene {
         WindowGroup {
-            MainView(tasks: Task.sampleTask)
+            MainView(tasks: Task.sampleTask, projects: Project.sampleProject)
         }
     }
 }

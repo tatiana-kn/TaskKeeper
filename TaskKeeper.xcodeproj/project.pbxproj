@@ -16,6 +16,9 @@
 		145A48402BAD5B2500B262BD /* ProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A483F2BAD5B2500B262BD /* ProjectsView.swift */; };
 		145A48422BAD5C0100B262BD /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48412BAD5C0100B262BD /* NewTaskView.swift */; };
 		145A48452BAD739D00B262BD /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48442BAD739D00B262BD /* Task.swift */; };
+		145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48462BAD8C9E00B262BD /* ProjectCardView.swift */; };
+		145A48492BAE907800B262BD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48482BAE907800B262BD /* Theme.swift */; };
+		145A484B2BAEB4D300B262BD /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A484A2BAEB4D300B262BD /* TaskCardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		145A483F2BAD5B2500B262BD /* ProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsView.swift; sourceTree = "<group>"; };
 		145A48412BAD5C0100B262BD /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		145A48442BAD739D00B262BD /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		145A48462BAD8C9E00B262BD /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
+		145A48482BAE907800B262BD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		145A484A2BAEB4D300B262BD /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,8 @@
 				145A482F2BAD40FF00B262BD /* ContentView.swift */,
 				145A483B2BAD59AC00B262BD /* MainView.swift */,
 				145A483D2BAD5A3300B262BD /* HomeView.swift */,
+				145A484A2BAEB4D300B262BD /* TaskCardView.swift */,
+				145A48462BAD8C9E00B262BD /* ProjectCardView.swift */,
 				145A483F2BAD5B2500B262BD /* ProjectsView.swift */,
 				145A48412BAD5C0100B262BD /* NewTaskView.swift */,
 				145A48312BAD410200B262BD /* Assets.xcassets */,
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				145A48442BAD739D00B262BD /* Task.swift */,
+				145A48482BAE907800B262BD /* Theme.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -160,12 +169,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				145A48492BAE907800B262BD /* Theme.swift in Sources */,
 				145A48302BAD40FF00B262BD /* ContentView.swift in Sources */,
 				145A483E2BAD5A3300B262BD /* HomeView.swift in Sources */,
 				145A48422BAD5C0100B262BD /* NewTaskView.swift in Sources */,
 				145A48402BAD5B2500B262BD /* ProjectsView.swift in Sources */,
+				145A484B2BAEB4D300B262BD /* TaskCardView.swift in Sources */,
 				145A483C2BAD59AC00B262BD /* MainView.swift in Sources */,
 				145A48452BAD739D00B262BD /* Task.swift in Sources */,
+				145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */,
 				145A482E2BAD40FF00B262BD /* TaskKeeperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
