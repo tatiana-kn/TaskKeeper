@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Task: Identifiable {    
+//сделать проект основной моделью, а таск вторичной. Таск создается внутри контекста проекта. Проект по умолчанию ToDo.
+
+struct Task: Identifiable {  
+    static var taskList: [Task] = []
     var id = UUID()
     
     var title: String
@@ -21,19 +24,9 @@ struct Task: Identifiable {
     var project: Project? = Project(title: "To do")
     var status: Status = .created
     
-}
-
-enum Priority {
-    case low
-    case medium
-    case high
-}
-
-enum Status {
-    case done
-    case inProgress
-    case notStarted
-    case created
+    static func create(task: Task) {
+        taskList.append(task)
+    }
 }
 
 struct Project: Identifiable {
@@ -49,6 +42,19 @@ struct Project: Identifiable {
     var trackedTime: Int = 0
     var theme: Theme?
     var status: Status = .created
+}
+
+enum Priority {
+    case low
+    case medium
+    case high
+}
+
+enum Status {
+    case done
+    case inProgress
+    case notStarted
+    case created
 }
 
 struct Tag {

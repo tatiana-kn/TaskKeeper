@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LoginView: View {
     @State private var name = ""
     @State private var password = ""
     @FocusState var isInputActive: Bool
     
     var body: some View {
+        SegmentControl()
+        
         ZStack {
             VStack {
                 VStack {
@@ -46,5 +48,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    LoginView()
 }

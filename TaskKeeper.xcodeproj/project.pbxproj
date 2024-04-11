@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		145A482E2BAD40FF00B262BD /* TaskKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A482D2BAD40FF00B262BD /* TaskKeeperApp.swift */; };
-		145A48302BAD40FF00B262BD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A482F2BAD40FF00B262BD /* ContentView.swift */; };
+		145A48302BAD40FF00B262BD /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A482F2BAD40FF00B262BD /* LoginView.swift */; };
 		145A48322BAD410200B262BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145A48312BAD410200B262BD /* Assets.xcassets */; };
 		145A48352BAD410200B262BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145A48342BAD410200B262BD /* Preview Assets.xcassets */; };
 		145A483C2BAD59AC00B262BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A483B2BAD59AC00B262BD /* MainView.swift */; };
@@ -19,12 +19,13 @@
 		145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48462BAD8C9E00B262BD /* ProjectCardView.swift */; };
 		145A48492BAE907800B262BD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48482BAE907800B262BD /* Theme.swift */; };
 		145A484B2BAEB4D300B262BD /* TaskCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A484A2BAEB4D300B262BD /* TaskCardView.swift */; };
+		14803F232BC438C70002AD1F /* SegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F222BC438C70002AD1F /* SegmentControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		145A482A2BAD40FF00B262BD /* TaskKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		145A482D2BAD40FF00B262BD /* TaskKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskKeeperApp.swift; sourceTree = "<group>"; };
-		145A482F2BAD40FF00B262BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		145A482F2BAD40FF00B262BD /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		145A48312BAD410200B262BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145A48342BAD410200B262BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		145A483B2BAD59AC00B262BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -35,6 +36,7 @@
 		145A48462BAD8C9E00B262BD /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		145A48482BAE907800B262BD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		145A484A2BAEB4D300B262BD /* TaskCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCardView.swift; sourceTree = "<group>"; };
+		14803F222BC438C70002AD1F /* SegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,7 +71,8 @@
 			children = (
 				145A48432BAD737E00B262BD /* Models */,
 				145A482D2BAD40FF00B262BD /* TaskKeeperApp.swift */,
-				145A482F2BAD40FF00B262BD /* ContentView.swift */,
+				145A482F2BAD40FF00B262BD /* LoginView.swift */,
+				14803F222BC438C70002AD1F /* SegmentControl.swift */,
 				145A483B2BAD59AC00B262BD /* MainView.swift */,
 				145A483D2BAD5A3300B262BD /* HomeView.swift */,
 				145A484A2BAEB4D300B262BD /* TaskCardView.swift */,
@@ -170,7 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				145A48492BAE907800B262BD /* Theme.swift in Sources */,
-				145A48302BAD40FF00B262BD /* ContentView.swift in Sources */,
+				145A48302BAD40FF00B262BD /* LoginView.swift in Sources */,
 				145A483E2BAD5A3300B262BD /* HomeView.swift in Sources */,
 				145A48422BAD5C0100B262BD /* NewTaskView.swift in Sources */,
 				145A48402BAD5B2500B262BD /* ProjectsView.swift in Sources */,
@@ -178,6 +181,7 @@
 				145A483C2BAD59AC00B262BD /* MainView.swift in Sources */,
 				145A48452BAD739D00B262BD /* Task.swift in Sources */,
 				145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */,
+				14803F232BC438C70002AD1F /* SegmentControl.swift in Sources */,
 				145A482E2BAD40FF00B262BD /* TaskKeeperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
