@@ -13,7 +13,7 @@ struct LoginView: View {
     @FocusState var isInputActive: Bool
     
     var body: some View {
-        SegmentControl()
+//        SegmentControl()
         
         ZStack {
             VStack {

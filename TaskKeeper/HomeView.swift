@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State private var taskList = Tasks()
     @State private var multiSelection = Set<UUID>()
     
     var tasks: [Task]
