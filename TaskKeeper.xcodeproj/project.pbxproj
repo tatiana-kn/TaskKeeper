@@ -33,6 +33,9 @@
 		14803F592BCBCE0A0002AD1F /* MainViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F582BCBCE0A0002AD1F /* MainViewViewModel.swift */; };
 		14803F5B2BCBD1280002AD1F /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F5A2BCBD1280002AD1F /* TaskListView.swift */; };
 		14803F5D2BCBD3100002AD1F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F5C2BCBD3100002AD1F /* ProfileView.swift */; };
+		14803F5F2BCBDB860002AD1F /* TaskListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */; };
+		14803F612BCBDBC40002AD1F /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F602BCBDBC40002AD1F /* ProfileViewViewModel.swift */; };
+		14803F632BCBE0260002AD1F /* NewTaskViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		14803F582BCBCE0A0002AD1F /* MainViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewViewModel.swift; sourceTree = "<group>"; };
 		14803F5A2BCBD1280002AD1F /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		14803F5C2BCBD3100002AD1F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewViewModel.swift; sourceTree = "<group>"; };
+		14803F602BCBDBC40002AD1F /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
+		14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,12 +139,12 @@
 				14803F502BCB8FD10002AD1F /* RegisterView.swift */,
 				14803F4E2BCAC6E70002AD1F /* HeaderView.swift */,
 				14803F522BCB98730002AD1F /* TKButton.swift */,
-				14803F5A2BCBD1280002AD1F /* TaskListView.swift */,
 				14803F5C2BCBD3100002AD1F /* ProfileView.swift */,
+				14803F5A2BCBD1280002AD1F /* TaskListView.swift */,
+				145A48412BAD5C0100B262BD /* NewTaskView.swift */,
 				145A483D2BAD5A3300B262BD /* HomeView.swift */,
 				145A484A2BAEB4D300B262BD /* TaskCardView.swift */,
 				145A48462BAD8C9E00B262BD /* ProjectCardView.swift */,
-				145A48412BAD5C0100B262BD /* NewTaskView.swift */,
 				145A483F2BAD5B2500B262BD /* ProjectsView.swift */,
 			);
 			path = Views;
@@ -150,6 +156,9 @@
 				14803F4C2BCABF650002AD1F /* LoginViewViewModel.swift */,
 				14803F542BCBADAF0002AD1F /* RegisterViewViewModel.swift */,
 				14803F582BCBCE0A0002AD1F /* MainViewViewModel.swift */,
+				14803F602BCBDBC40002AD1F /* ProfileViewViewModel.swift */,
+				14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */,
+				14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -241,9 +250,12 @@
 				14803F512BCB8FD10002AD1F /* RegisterView.swift in Sources */,
 				145A48422BAD5C0100B262BD /* NewTaskView.swift in Sources */,
 				145A48402BAD5B2500B262BD /* ProjectsView.swift in Sources */,
+				14803F612BCBDBC40002AD1F /* ProfileViewViewModel.swift in Sources */,
 				145A484B2BAEB4D300B262BD /* TaskCardView.swift in Sources */,
+				14803F5F2BCBDB860002AD1F /* TaskListViewViewModel.swift in Sources */,
 				14803F4D2BCABF650002AD1F /* LoginViewViewModel.swift in Sources */,
 				145A483C2BAD59AC00B262BD /* MainView.swift in Sources */,
+				14803F632BCBE0260002AD1F /* NewTaskViewViewModel.swift in Sources */,
 				145A48452BAD739D00B262BD /* Task.swift in Sources */,
 				14803F5D2BCBD3100002AD1F /* ProfileView.swift in Sources */,
 				14803F532BCB98730002AD1F /* TKButton.swift in Sources */,
