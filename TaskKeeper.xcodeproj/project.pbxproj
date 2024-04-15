@@ -13,7 +13,6 @@
 		145A48352BAD410200B262BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145A48342BAD410200B262BD /* Preview Assets.xcassets */; };
 		145A483C2BAD59AC00B262BD /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A483B2BAD59AC00B262BD /* MainView.swift */; };
 		145A48422BAD5C0100B262BD /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48412BAD5C0100B262BD /* NewTaskView.swift */; };
-		145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48462BAD8C9E00B262BD /* ProjectCardView.swift */; };
 		145A48492BAE907800B262BD /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145A48482BAE907800B262BD /* Theme.swift */; };
 		14803F412BCAA0710002AD1F /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 14803F402BCAA0710002AD1F /* FirebaseAuth */; };
 		14803F432BCAA0710002AD1F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 14803F422BCAA0710002AD1F /* FirebaseFirestore */; };
@@ -46,7 +45,6 @@
 		145A48342BAD410200B262BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		145A483B2BAD59AC00B262BD /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		145A48412BAD5C0100B262BD /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
-		145A48462BAD8C9E00B262BD /* ProjectCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCardView.swift; sourceTree = "<group>"; };
 		145A48482BAE907800B262BD /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		14803F462BCAA1330002AD1F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14803F4A2BCABEB00002AD1F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 			children = (
 				14803F492BCABD4D0002AD1F /* ViewModels */,
 				14803F482BCABD3F0002AD1F /* Views */,
-				14803F462BCAA1330002AD1F /* GoogleService-Info.plist */,
 				145A48432BAD737E00B262BD /* Models */,
 				14E046BB2BCD69A90053A2BC /* Other */,
 				145A48332BAD410200B262BD /* Preview Content */,
@@ -141,7 +138,6 @@
 				14803F5A2BCBD1280002AD1F /* TaskListView.swift */,
 				14803F662BCCEDA20002AD1F /* TaskListItemView.swift */,
 				145A48412BAD5C0100B262BD /* NewTaskView.swift */,
-				145A48462BAD8C9E00B262BD /* ProjectCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +163,7 @@
 				14803F562BCBCBC20002AD1F /* Extensions.swift */,
 				14803F6A2BCD07460002AD1F /* Launch Screen.storyboard */,
 				145A48312BAD410200B262BD /* Assets.xcassets */,
+				14803F462BCAA1330002AD1F /* GoogleService-Info.plist */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -269,7 +266,6 @@
 				14803F4B2BCABEB00002AD1F /* User.swift in Sources */,
 				14803F5B2BCBD1280002AD1F /* TaskListView.swift in Sources */,
 				14803F652BCCE8F20002AD1F /* TaskItem.swift in Sources */,
-				145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */,
 				14803F572BCBCBC20002AD1F /* Extensions.swift in Sources */,
 				145A482E2BAD40FF00B262BD /* TaskKeeperApp.swift in Sources */,
 				14803F4F2BCAC6E70002AD1F /* HeaderView.swift in Sources */,
@@ -427,7 +423,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,7 +456,7 @@
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
