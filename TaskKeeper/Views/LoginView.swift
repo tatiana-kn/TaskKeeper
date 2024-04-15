@@ -14,12 +14,11 @@ struct LoginView: View {
     var body: some View {
         NavigationView {
             VStack {
-                // Header
                 HeaderView(title: "Task Keeper",
                            subtitle: "Get organized",
-                           angle: 20, 
-                           mainBackground: .minty,
-                           propBackground: .redish)
+                           angle: 12, 
+                           mainBackground: .redish,
+                           propBackground: .minty)
                 .padding(.top, 30)
                 
                 Form {
@@ -35,23 +34,19 @@ struct LoginView: View {
                     SecureField("Enter your password", text: $viewModel.password)
                         .textFieldStyle(DefaultTextFieldStyle())
                     
-                    TKButton(title: "Log In", background: .blue) {
+                    TKButton(title: "Log In", background: .navy) {
                         viewModel.login()
                     }
                     .padding()
                 }
-                .offset(y: -50)
+                .offset(y: -70)
                 
-                // Create Account
                 VStack {
                     Text("Don't have an account?")
                     NavigationLink("Create an account",
                                    destination: RegisterView())
                 }
-                .padding(.bottom, 30)
-                
-                
-                Spacer()
+                .padding(.bottom, 10)
             }
         }
     }

@@ -31,6 +31,7 @@ struct MainView: View {
                     Label("Profile", systemImage: "person.circle")
                 }
         }
+        .tint(.minty)
     }
 }
 

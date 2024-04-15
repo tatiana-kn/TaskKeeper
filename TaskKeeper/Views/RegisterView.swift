@@ -12,11 +12,20 @@ struct RegisterView: View {
     
     var body: some View {
         VStack {
-            // Header
-            HeaderView(title: "Register", subtitle: "Start organizing", angle: 20, mainBackground: .redish, propBackground: .minty)
+            HeaderView(
+                title: "Register",
+                subtitle: "Get organized with Task Keeper",
+                angle: 12,
+                mainBackground: .minty,
+                propBackground: .redish)
         }
-        
+            
         Form {
+            if !viewModel.errorMessage.isEmpty {
+                Text(viewModel.errorMessage)
+                    .foregroundStyle(.red)
+            }
+            
             TextField("Full Name", text: $viewModel.name)
                 .textFieldStyle(DefaultTextFieldStyle())
                 .autocorrectionDisabled()
@@ -29,14 +38,12 @@ struct RegisterView: View {
             SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(DefaultTextFieldStyle())
             
-            TKButton(title: "Create Account", background: .lemon) {
+            TKButton(title: "Create Account", background: .minty) {
                 viewModel.register()
             }
             .padding()
         }
-        .offset(y: -50)
-        
-        Spacer()
+        .offset(y: -70)
     }
 }
 

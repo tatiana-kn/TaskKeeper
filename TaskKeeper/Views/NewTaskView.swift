@@ -23,7 +23,26 @@ struct NewTaskView: View {
                 
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
                 
-                TKButton(title: "Save", background: .blue) {
+                
+                HStack {
+                    Text("Set High Priority")
+                    Spacer()
+                    
+                    Text(viewModel.isHighPriority ? "!" : "")
+                        .font(.title2)
+                        .bold()
+                        .foregroundStyle(.redish)
+                    
+                    Button {
+                        viewModel.isHighPriority.toggle()
+                    } label: {
+                        Image(systemName: viewModel.isHighPriority ? "checkmark.circle.fill" : "circle")
+                            .font(.title2)
+                            .foregroundStyle(viewModel.isHighPriority ? .redish : .minty)
+                    }
+                }
+                
+                TKButton(title: "Save", background: .minty) {
                     if viewModel.canSave {
                         viewModel.save()
                         isNewTaskPresented = false

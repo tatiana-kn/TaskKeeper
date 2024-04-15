@@ -23,15 +23,22 @@ struct TaskListItemView: View {
             }
             Spacer()
             
+            Text(item.isHighPriority ? "!" : "")
+                .font(.title2)
+                .bold()
+                .foregroundStyle(.redish)
+            
             Button {
                 viewModel.toggleIsDone(item: item)
             } label: {
                 Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .font(.title2)
+                    .foregroundStyle(item.isDone ? .minty : .lemon)
             }
         }
     }
 }
 
 #Preview {
-    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: true))
+    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true))
 }

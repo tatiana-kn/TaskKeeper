@@ -16,14 +16,22 @@ struct HeaderView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 0)
-                .foregroundStyle(mainBackground)
-                .rotationEffect(Angle(degrees: -angle/2))
             
             RoundedRectangle(cornerRadius: 0)
                 .foregroundStyle(propBackground)
                 .rotationEffect(Angle(degrees: angle))
             
+            RoundedRectangle(cornerRadius: 0)
+                .foregroundStyle(.lemon)
+                .rotationEffect(Angle(degrees: -17))
+            
+            RoundedRectangle(cornerRadius: 0)
+                .foregroundStyle(mainBackground)
+                .rotationEffect(Angle(degrees: -angle/2))
+            
+            
+            
+  
             VStack {
                 Text(title)
                     .font(.system(size: 50))
@@ -33,7 +41,7 @@ struct HeaderView: View {
                     .font(.system(size: 25))
                     .foregroundStyle(.white)
             }
-            .padding(.top, 70)
+            .padding(.top, 60)
         }
         .frame(width: UIScreen.main.bounds.width * 3, height: 350)
         .offset(y: -150)

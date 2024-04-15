@@ -61,12 +61,13 @@ struct ProfileView: View {
             .padding()
         }
         .padding()
+        Spacer()
         
         Button("Log Out") {
             viewModel.logOut()
         }
         .tint(.red)
-        .padding()
+        .padding(.bottom, 70)
     }
 }
 

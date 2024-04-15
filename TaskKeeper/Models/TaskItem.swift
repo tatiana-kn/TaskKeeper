@@ -13,6 +13,7 @@ struct TaskItem: Codable, Identifiable {
     let dueDate: TimeInterval
     let createdDate: TimeInterval
     var isDone: Bool
+    var isHighPriority: Bool
     
     mutating func setDone(_ state: Bool) {
         isDone = state
