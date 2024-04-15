@@ -1,20 +1,18 @@
 //
-//  NewTaskViewViewModel.swift
+//  NewProjectViewViewModel.swift
 //  TaskKeeper
 //
-//  Created by Tia M on 4/14/24.
+//  Created by Tia M on 4/15/24.
 //
 
 import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class NewTaskViewViewModel: ObservableObject {
+class NewProjectViewViewModel: ObservableObject {
     @Published var title = ""
     @Published var dueDate = Date()
     @Published var showAlert = false
-    @Published var isHighPriority = false
-    @Published var project = ""
     
     init() {}
     
@@ -23,20 +21,19 @@ class NewTaskViewViewModel: ObservableObject {
         guard let uId = Auth.auth().currentUser?.uid else { return }
         
         let newId = UUID().uuidString
-        let newItem = TaskItem(
+        let newItem = ProjectItem(
             id: newId,
             title: title,
             dueDate: dueDate.timeIntervalSince1970,
             createdDate: Date().timeIntervalSince1970,
-            isDone: false, 
-            isHighPriority: isHighPriority 
-//            project: project
+            isFinished: false, 
+            taskList: []
         )
         
         let db = Firestore.firestore()
         db.collection("users")
             .document(uId)
-            .collection("todos")
+            .collection("todos") // change
             .document(newId)
             .setData(newItem.asDictionary())
     }

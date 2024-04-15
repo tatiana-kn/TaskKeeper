@@ -19,3 +19,16 @@ struct TaskItem: Codable, Identifiable {
         isDone = state
     }
 }
+
+struct ProjectItem: Codable, Identifiable {
+    let id: String
+    let title: String
+    let dueDate: TimeInterval
+    let createdDate: TimeInterval
+    var isFinished: Bool
+    var taskList: [TaskItem]
+    
+    mutating func setFinished(_ state: Bool) {
+        isFinished = state
+    }
+}
