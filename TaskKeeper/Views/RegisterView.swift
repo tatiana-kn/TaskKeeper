@@ -19,7 +19,7 @@ struct RegisterView: View {
                 mainBackground: .minty,
                 propBackground: .redish)
         }
-            
+        
         Form {
             if !viewModel.errorMessage.isEmpty {
                 Text(viewModel.errorMessage)

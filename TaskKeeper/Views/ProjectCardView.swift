@@ -26,8 +26,6 @@ struct ProjectCardView: View {
                     .font(.largeTitle)
                     .padding(5)
             }
-            
-            
         }
         .foregroundColor(.black)
     }
@@ -35,5 +33,4 @@ struct ProjectCardView: View {
 
 #Preview {
     ProjectCardView(project: Project.sampleProject[2])
-//        .frame(width: 150, height: 150)
 }

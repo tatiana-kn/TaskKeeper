@@ -29,9 +29,6 @@ struct HeaderView: View {
                 .foregroundStyle(mainBackground)
                 .rotationEffect(Angle(degrees: -angle/2))
             
-            
-            
-  
             VStack {
                 Text(title)
                     .font(.system(size: 50))

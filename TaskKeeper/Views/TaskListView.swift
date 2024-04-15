@@ -27,7 +27,6 @@ struct TaskListView: View {
                                 viewModel.delete(id: item.id)
                             }
                             .tint(.red)
-
                         }
                 }
                 .listStyle(.plain)

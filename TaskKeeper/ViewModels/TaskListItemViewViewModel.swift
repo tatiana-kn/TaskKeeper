@@ -25,5 +25,4 @@ class TaskListItemViewViewModel: ObservableObject {
             .document(itemCopy.id)
             .setData(itemCopy.asDictionary())
     }
-    
 }

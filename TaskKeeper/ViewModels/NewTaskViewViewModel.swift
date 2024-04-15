@@ -27,7 +27,7 @@ class NewTaskViewViewModel: ObservableObject {
             title: title,
             dueDate: dueDate.timeIntervalSince1970,
             createdDate: Date().timeIntervalSince1970,
-            isDone: false, 
+            isDone: false,
             isHighPriority: isHighPriority
         )
         
@@ -42,7 +42,6 @@ class NewTaskViewViewModel: ObservableObject {
     var canSave: Bool {
         guard !title.trimmingCharacters(in: .whitespaces).isEmpty else { return false }
         guard dueDate >= Date().addingTimeInterval(-86400) else { return false }
-        
         return true
     }
 }

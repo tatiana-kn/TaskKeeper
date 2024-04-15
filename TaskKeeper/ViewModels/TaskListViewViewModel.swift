@@ -10,7 +10,7 @@ import Foundation
 
 class TaskListViewViewModel: ObservableObject {
     @Published var isShowingNewTaskView = false
-    
+
     private let userId: String
     
     init(userId: String) {
@@ -25,6 +25,5 @@ class TaskListViewViewModel: ObservableObject {
             .collection("todos")
             .document(id)
             .delete()
-        
     }
 }

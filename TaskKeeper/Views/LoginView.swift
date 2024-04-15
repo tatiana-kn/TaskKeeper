@@ -9,14 +9,13 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject var viewModel = LoginViewViewModel()
-//    @FocusState var isInputActive: Bool
     
     var body: some View {
         NavigationView {
             VStack {
                 HeaderView(title: "Task Keeper",
                            subtitle: "Get organized",
-                           angle: 12, 
+                           angle: 12,
                            mainBackground: .redish,
                            propBackground: .minty)
                 .padding(.top, 30)
@@ -56,32 +55,3 @@ struct LoginView: View {
     LoginView()
 }
 
-//        ZStack {
-//            VStack {
-//                VStack {
-//                    Text("Create new account")
-//                        .font(.title)
-//
-//                    TextField("Enter your name", text: $name)
-//                        .textFieldStyle(.roundedBorder)
-//                        .focused($isInputActive)
-//
-//                    TextField("Enter your email", text: $password)
-//                        .textFieldStyle(.roundedBorder)
-//                        .focused($isInputActive)
-//
-//                    Button("CREARE ACCOUNT", action: {})
-//                        .padding()
-//                }
-//                .padding()
-//                Spacer()
-//                Text("Already have an account?")
-//                    .font(.title3)
-//                Button("LOG IN", action: {})
-//                    .padding()
-//
-//            }
-//        }
-//        .onTapGesture {
-//            isInputActive = false
-//        }

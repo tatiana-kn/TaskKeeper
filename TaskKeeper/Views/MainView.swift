@@ -13,7 +13,6 @@ struct MainView: View {
     var body: some View {
         if viewModel.isSignedIn, !viewModel.currentUserId.isEmpty {
             accountView
-            
         } else {
             LoginView()
         }
@@ -39,22 +38,3 @@ struct MainView: View {
     MainView()
 }
 
-//    var tasks: [Task]
-//    var projects: [Project]
-//
-//    var body: some View {
-//        TabView {
-//            HomeView(tasks: tasks, projects: projects)
-//                .tabItem {
-//                    Image(systemName: "house")
-//                }
-//            NewTaskView()
-//                .tabItem {
-//                    Image(systemName: "plus")
-//                }
-//            ProjectsView(projects: projects)
-//                .tabItem {
-//                    Image(systemName: "rectangle.stack")
-//                }
-//        }
-//    }
