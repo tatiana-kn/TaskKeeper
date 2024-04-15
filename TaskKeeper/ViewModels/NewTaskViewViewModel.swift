@@ -14,6 +14,7 @@ class NewTaskViewViewModel: ObservableObject {
     @Published var dueDate = Date()
     @Published var showAlert = false
     @Published var isHighPriority = false
+    @Published var tag = ""
     
     init() {}
     
@@ -28,7 +29,8 @@ class NewTaskViewViewModel: ObservableObject {
             dueDate: dueDate.timeIntervalSince1970,
             createdDate: Date().timeIntervalSince1970,
             isDone: false,
-            isHighPriority: isHighPriority
+            isHighPriority: isHighPriority, 
+            tag: tag
         )
         
         let db = Firestore.firestore()

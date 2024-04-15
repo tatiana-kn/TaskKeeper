@@ -25,6 +25,12 @@ struct MainView: View {
                 .tabItem {
                     Label("Home", systemImage: "house")
                 }
+            
+            TagsView(userId: viewModel.currentUserId)
+                .tabItem {
+                    Label("Tags", systemImage: "house")
+                }
+            
             ProfileView()
                 .tabItem {
                     Label("Profile", systemImage: "person.circle")

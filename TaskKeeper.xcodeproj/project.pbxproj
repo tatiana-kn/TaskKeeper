@@ -35,6 +35,8 @@
 		14803F672BCCEDA20002AD1F /* TaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F662BCCEDA20002AD1F /* TaskListItemView.swift */; };
 		14803F692BCCF3810002AD1F /* TaskListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F682BCCF3810002AD1F /* TaskListItemViewViewModel.swift */; };
 		14803F6B2BCD07460002AD1F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14803F6A2BCD07460002AD1F /* Launch Screen.storyboard */; };
+		14E046BD2BCD74A10053A2BC /* TagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E046BC2BCD74A00053A2BC /* TagsView.swift */; };
+		14E046BF2BCD74BA0053A2BC /* TagsViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E046BE2BCD74BA0053A2BC /* TagsViewViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		14803F662BCCEDA20002AD1F /* TaskListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemView.swift; sourceTree = "<group>"; };
 		14803F682BCCF3810002AD1F /* TaskListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemViewViewModel.swift; sourceTree = "<group>"; };
 		14803F6A2BCD07460002AD1F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		14E046BC2BCD74A00053A2BC /* TagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsView.swift; sourceTree = "<group>"; };
+		14E046BE2BCD74BA0053A2BC /* TagsViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 				14803F5A2BCBD1280002AD1F /* TaskListView.swift */,
 				14803F662BCCEDA20002AD1F /* TaskListItemView.swift */,
 				145A48412BAD5C0100B262BD /* NewTaskView.swift */,
+				14E046BC2BCD74A00053A2BC /* TagsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */,
 				14803F682BCCF3810002AD1F /* TaskListItemViewViewModel.swift */,
 				14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */,
+				14E046BE2BCD74BA0053A2BC /* TagsViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -252,11 +258,13 @@
 				145A48302BAD40FF00B262BD /* LoginView.swift in Sources */,
 				14803F592BCBCE0A0002AD1F /* MainViewViewModel.swift in Sources */,
 				14803F552BCBADAF0002AD1F /* RegisterViewViewModel.swift in Sources */,
+				14E046BF2BCD74BA0053A2BC /* TagsViewViewModel.swift in Sources */,
 				14803F512BCB8FD10002AD1F /* RegisterView.swift in Sources */,
 				145A48422BAD5C0100B262BD /* NewTaskView.swift in Sources */,
 				14803F612BCBDBC40002AD1F /* ProfileViewViewModel.swift in Sources */,
 				14803F5F2BCBDB860002AD1F /* TaskListViewViewModel.swift in Sources */,
 				14803F692BCCF3810002AD1F /* TaskListItemViewViewModel.swift in Sources */,
+				14E046BD2BCD74A10053A2BC /* TagsView.swift in Sources */,
 				14803F4D2BCABF650002AD1F /* LoginViewViewModel.swift in Sources */,
 				145A483C2BAD59AC00B262BD /* MainView.swift in Sources */,
 				14803F632BCBE0260002AD1F /* NewTaskViewViewModel.swift in Sources */,

@@ -40,5 +40,5 @@ struct TaskListItemView: View {
 }
 
 #Preview {
-    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true))
+    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true, tag: "personal"))
 }

@@ -14,8 +14,14 @@ struct TaskItem: Codable, Identifiable {
     let createdDate: TimeInterval
     var isDone: Bool
     var isHighPriority: Bool
+    var tag: String
     
     mutating func setDone(_ state: Bool) {
         isDone = state
     }
 }
+
+//struct Project: Codable, Identifiable {
+//    let id: String
+//    let title: String
+//}

@@ -21,6 +21,9 @@ struct NewTaskView: View {
                 TextField("Add task title", text: $viewModel.title)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
+                TextField("Add tag", text: $viewModel.tag)
+                    .textFieldStyle(DefaultTextFieldStyle())
+                
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
                 
                 HStack {
