@@ -5,21 +5,32 @@
 //  Created by Tia M on 4/14/24.
 //
 
+import FirebaseFirestoreSwift
 import SwiftUI
 
 struct TaskListView: View {
-    @StateObject var viewModel = TaskListViewViewModel()
-    
-    private let userId: String
+    @StateObject var viewModel: TaskListViewViewModel
+    @FirestoreQuery var items: [TaskItem]
     
     init(userId: String) {
-        self.userId = userId
+        self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
+        self._viewModel = StateObject(wrappedValue: TaskListViewViewModel(userId: userId))
     }
     
     var body: some View {
         NavigationView {
             VStack {
-                
+                List(items) { item in
+                    TaskListItemView(item: item)
+                        .swipeActions{
+                            Button("Delete") {
+                                viewModel.delete(id: item.id)
+                            }
+                            .tint(.red)
+
+                        }
+                }
+                .listStyle(.plain)
             }
             .navigationTitle("Tasks")
             .toolbar {
@@ -38,5 +49,5 @@ struct TaskListView: View {
 }
 
 #Preview {
-    TaskListView(userId: "")
+    TaskListView(userId: "tumTv7xUS0YP0uK12xxZwmt6WKw1")
 }

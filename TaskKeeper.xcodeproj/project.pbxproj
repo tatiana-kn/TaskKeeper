@@ -36,6 +36,10 @@
 		14803F5F2BCBDB860002AD1F /* TaskListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */; };
 		14803F612BCBDBC40002AD1F /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F602BCBDBC40002AD1F /* ProfileViewViewModel.swift */; };
 		14803F632BCBE0260002AD1F /* NewTaskViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */; };
+		14803F652BCCE8F20002AD1F /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F642BCCE8F20002AD1F /* TaskItem.swift */; };
+		14803F672BCCEDA20002AD1F /* TaskListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F662BCCEDA20002AD1F /* TaskListItemView.swift */; };
+		14803F692BCCF3810002AD1F /* TaskListItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14803F682BCCF3810002AD1F /* TaskListItemViewViewModel.swift */; };
+		14803F6B2BCD07460002AD1F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14803F6A2BCD07460002AD1F /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +70,10 @@
 		14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewViewModel.swift; sourceTree = "<group>"; };
 		14803F602BCBDBC40002AD1F /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewViewModel.swift; sourceTree = "<group>"; };
+		14803F642BCCE8F20002AD1F /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		14803F662BCCEDA20002AD1F /* TaskListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemView.swift; sourceTree = "<group>"; };
+		14803F682BCCF3810002AD1F /* TaskListItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListItemViewViewModel.swift; sourceTree = "<group>"; };
+		14803F6A2BCD07460002AD1F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,7 @@
 				145A48312BAD410200B262BD /* Assets.xcassets */,
 				145A48332BAD410200B262BD /* Preview Content */,
 				14803F562BCBCBC20002AD1F /* Extensions.swift */,
+				14803F6A2BCD07460002AD1F /* Launch Screen.storyboard */,
 			);
 			path = TaskKeeper;
 			sourceTree = "<group>";
@@ -127,6 +136,7 @@
 				145A48442BAD739D00B262BD /* Task.swift */,
 				145A48482BAE907800B262BD /* Theme.swift */,
 				14803F4A2BCABEB00002AD1F /* User.swift */,
+				14803F642BCCE8F20002AD1F /* TaskItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -141,6 +151,7 @@
 				14803F522BCB98730002AD1F /* TKButton.swift */,
 				14803F5C2BCBD3100002AD1F /* ProfileView.swift */,
 				14803F5A2BCBD1280002AD1F /* TaskListView.swift */,
+				14803F662BCCEDA20002AD1F /* TaskListItemView.swift */,
 				145A48412BAD5C0100B262BD /* NewTaskView.swift */,
 				145A483D2BAD5A3300B262BD /* HomeView.swift */,
 				145A484A2BAEB4D300B262BD /* TaskCardView.swift */,
@@ -158,6 +169,7 @@
 				14803F582BCBCE0A0002AD1F /* MainViewViewModel.swift */,
 				14803F602BCBDBC40002AD1F /* ProfileViewViewModel.swift */,
 				14803F5E2BCBDB860002AD1F /* TaskListViewViewModel.swift */,
+				14803F682BCCF3810002AD1F /* TaskListItemViewViewModel.swift */,
 				14803F622BCBE0260002AD1F /* NewTaskViewViewModel.swift */,
 			);
 			path = ViewModels;
@@ -231,6 +243,7 @@
 			files = (
 				145A48352BAD410200B262BD /* Preview Assets.xcassets in Resources */,
 				145A48322BAD410200B262BD /* Assets.xcassets in Resources */,
+				14803F6B2BCD07460002AD1F /* Launch Screen.storyboard in Resources */,
 				14803F472BCAA1330002AD1F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,14 +266,17 @@
 				14803F612BCBDBC40002AD1F /* ProfileViewViewModel.swift in Sources */,
 				145A484B2BAEB4D300B262BD /* TaskCardView.swift in Sources */,
 				14803F5F2BCBDB860002AD1F /* TaskListViewViewModel.swift in Sources */,
+				14803F692BCCF3810002AD1F /* TaskListItemViewViewModel.swift in Sources */,
 				14803F4D2BCABF650002AD1F /* LoginViewViewModel.swift in Sources */,
 				145A483C2BAD59AC00B262BD /* MainView.swift in Sources */,
 				14803F632BCBE0260002AD1F /* NewTaskViewViewModel.swift in Sources */,
 				145A48452BAD739D00B262BD /* Task.swift in Sources */,
 				14803F5D2BCBD3100002AD1F /* ProfileView.swift in Sources */,
+				14803F672BCCEDA20002AD1F /* TaskListItemView.swift in Sources */,
 				14803F532BCB98730002AD1F /* TKButton.swift in Sources */,
 				14803F4B2BCABEB00002AD1F /* User.swift in Sources */,
 				14803F5B2BCBD1280002AD1F /* TaskListView.swift in Sources */,
+				14803F652BCCE8F20002AD1F /* TaskItem.swift in Sources */,
 				145A48472BAD8C9E00B262BD /* ProjectCardView.swift in Sources */,
 				14803F572BCBCBC20002AD1F /* Extensions.swift in Sources */,
 				145A482E2BAD40FF00B262BD /* TaskKeeperApp.swift in Sources */,
@@ -404,6 +420,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +453,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
