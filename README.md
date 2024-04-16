@@ -12,8 +12,8 @@ TaskKeeper is an iOS mobile app for making to-do lists.
 - displays error messages when incorrect data is entered
 <img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/3da8adc9-e025-4c81-967d-0ebca7a48d72" height="350" alt="screenshot_1">
 <img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/02b5d5b8-51ff-403c-a7a6-25516308636f" height="350" alt="screenshot_2">
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/375eab9c-eb7d-4f28-87da-15ef01ef6347" height="350" alt="screenshot_3">
 <img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/5dafa538-2105-4b86-9add-02e9878b1cd9" height="350" alt="screenshot_4">
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/375eab9c-eb7d-4f28-87da-15ef01ef6347" height="350" alt="screenshot_3">
 
 #### Tasks screen
 - displays all the tasks
@@ -23,7 +23,7 @@ TaskKeeper is an iOS mobile app for making to-do lists.
 - new task screen sets the task's title, due date, and priority
 <img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/dc796f1b-e930-42ac-806a-35d7a59e8d6e" height="350" alt="screenshot_6">
 <img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/85caafb4-8ffb-45d2-b4d5-d2adfa23b3e6" height="350" alt="screenshot_7">
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/bde4a0a4-29a5-4dfc-b0b1-7085929df8be" height="350" alt="screenshot_5">
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/3b13dece-b928-4400-85e5-1a52d50956db" height="350" alt="screenshot_5">
 
 #### Profile screen
 - shows user information
