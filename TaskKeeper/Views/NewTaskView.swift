@@ -10,59 +10,75 @@ import SwiftUI
 struct NewTaskView: View {
     @StateObject var viewModel = NewTaskViewViewModel()
     @Binding var isNewTaskPresented: Bool
+    @Environment(\.dismiss) var dismiss
+    
+//    var item: TaskItem?
+//    
+//    enum Mode {
+//      case add
+//      case edit
+//    }
+//    var mode: Mode = .add
     
     var body: some View {
-        VStack {
-            Text("New Task")
-                .font(.title)
-                .bold()
-                .padding(.top, 40)
-            Form {
-                TextField("Add task title", text: $viewModel.title)
-                    .textFieldStyle(DefaultTextFieldStyle())
-                
-                TextField("Add tag", text: $viewModel.tag)
-                    .textFieldStyle(DefaultTextFieldStyle())
-                
-                DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
-                
-                HStack {
-                    Text("Set High Priority")
-                    Spacer()
+        NavigationView {
+            VStack {
+                Form {
+                    TextField("Add task title", text: $viewModel.title)
+                        .textFieldStyle(DefaultTextFieldStyle())
                     
-                    Text(viewModel.isHighPriority ? "!" : "")
-                        .font(.title2)
-                        .bold()
-                        .foregroundStyle(.redish)
+                    TextField("Add tag", text: $viewModel.tag)
+                        .textFieldStyle(DefaultTextFieldStyle())
                     
-                    Button {
-                        viewModel.isHighPriority.toggle()
-                    } label: {
-                        Image(systemName: viewModel.isHighPriority ? "checkmark.circle.fill" : "circle")
+                    DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
+                    
+                    HStack {
+                        Text("Set High Priority")
+                        Spacer()
+                        
+                        Text(viewModel.isHighPriority ? "!" : "")
                             .font(.title2)
-                            .foregroundStyle(viewModel.isHighPriority ? .redish : .minty)
+                            .bold()
+                            .foregroundStyle(.redish)
+                        
+                        Button {
+                            viewModel.isHighPriority.toggle()
+                        } label: {
+                            Image(systemName: viewModel.isHighPriority ? "checkmark.circle.fill" : "circle")
+                                .font(.title2)
+                                .foregroundStyle(viewModel.isHighPriority ? .redish : .minty)
+                        }
                     }
-                }
-                
-                TKButton(title: "Save", background: .minty) {
-                    if viewModel.canSave {
-                        viewModel.save()
-                        isNewTaskPresented = false
-                    } else {
-                        viewModel.showAlert = true
+                    
+                    TKButton(title: "Save", background: .minty) {
+                        if viewModel.canSave {
+                            viewModel.save()
+                            isNewTaskPresented = false
+                        } else {
+                            viewModel.showAlert = true
+                        }
                     }
+                    .padding()
                 }
-                .padding()
+                .alert(isPresented: $viewModel.showAlert) {
+                    Alert(title: Text("Error"),
+                          message: Text("Please fill in all fields and select due date"))
+                }
             }
-            .alert(isPresented: $viewModel.showAlert) {
-                Alert(title: Text("Error"),
-                      message: Text("Please fill in all fields and select due date"))
+            .navigationTitle("New Task")
+//            .navigationTitle(mode == .add ? "New Task" : "Details")
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Button("Cancel") {
+                        dismiss()
+                    }
+                }
             }
         }
     }
 }
 
-#Preview {
-    NewTaskView(isNewTaskPresented: .constant(true))
-}
+//#Preview {
+//    NewTaskView(isNewTaskPresented: .constant(true))
+//}
 

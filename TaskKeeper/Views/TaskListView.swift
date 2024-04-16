@@ -28,6 +28,9 @@ struct TaskListView: View {
                             }
                             .tint(.red)
                         }
+//                        .onTapGesture {
+//                            editableTask = item
+//                                }
                 }
                 .listStyle(.plain)
             }
@@ -43,6 +46,9 @@ struct TaskListView: View {
             .sheet(isPresented: $viewModel.isShowingNewTaskView) {
                 NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView)
             }
+//            .sheet(item: $editableTask) { item in
+//                NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView, item: item, mode: .edit)
+//                }
         }
     }
 }
