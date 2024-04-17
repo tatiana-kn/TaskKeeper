@@ -21,7 +21,7 @@ struct TaskListView: View {
         NavigationView {
             VStack {
                 List(items) { item in
-                    NavigationLink(destination: TaskView(action: {}, task: item)) {
+                    NavigationLink(destination: TaskView(taskId: item.id)) {
                         TaskListItemView(item: item)
                             .swipeActions{
                                 Button("Delete") {

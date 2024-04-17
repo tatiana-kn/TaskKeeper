@@ -9,18 +9,17 @@ import SwiftUI
 
 struct TaskView: View {
 
-    @StateObject var viewModel = NewTaskViewViewModel()
-    let action: () -> Void
-    @State var task: TaskItem
+    @StateObject var viewModel = TaskViewViewModel()
+    @State var taskId: String
 
-    
     var body: some View {
         VStack {
             Form {
-                TextField("Task title", text: $task.title)
+                Text(taskId)
+                TextField("Task title", text: $viewModel.title)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
-                TextField("Tag", text: $task.tag)
+                TextField("Tag", text: $viewModel.tag)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
@@ -29,26 +28,34 @@ struct TaskView: View {
                     Text("Set High Priority")
                     Spacer()
                     
-                    Text(task.isHighPriority ? "!" : "")
+                    Text(viewModel.isHighPriority ? "!" : "")
                         .font(.title2)
                         .bold()
                         .foregroundStyle(.redish)
                     
                     Button {
-                        task.isHighPriority.toggle()
+                        viewModel.isHighPriority.toggle()
                     } label: {
-                        Image(systemName: task.isHighPriority ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: viewModel.isHighPriority ? "checkmark.circle.fill" : "circle")
                             .font(.title2)
-                            .foregroundStyle(task.isHighPriority ? .redish : .minty)
+                            .foregroundStyle(viewModel.isHighPriority ? .redish : .minty)
                     }
                 }
                 
                 TKButton(title: "Save", background: .minty) {
-                    action()
+                    if viewModel.canSave {
+                        viewModel.update(itemId: taskId)
+                    } else {
+                        viewModel.showAlert = true
+                    }
                 }
                 .padding()
             }
         }
+        .onAppear {
+            viewModel.loadTask(taskId: taskId)
+        }
+
     }
 }
 
