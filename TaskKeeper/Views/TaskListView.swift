@@ -12,25 +12,29 @@ struct TaskListView: View {
     @StateObject var viewModel: TaskListViewViewModel
     @FirestoreQuery var items: [TaskItem]
     
+    @State private var selectedTask: TaskItem
+    
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
         self._viewModel = StateObject(wrappedValue: TaskListViewViewModel(userId: userId))
+        self._selectedTask = State(initialValue: TaskItem(id: "", title: "", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: false, tag: ""))
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 List(items) { item in
-                    TaskListItemView(item: item)
-                        .swipeActions{
-                            Button("Delete") {
-                                viewModel.delete(id: item.id)
+                    NavigationLink(destination: TaskView(action: {
+                        selectedTask = item
+                    })) {
+                        TaskListItemView(item: item)
+                            .swipeActions{
+                                Button("Delete") {
+                                    viewModel.delete(id: item.id)
+                                }
+                                .tint(.red)
                             }
-                            .tint(.red)
-                        }
-//                        .onTapGesture {
-//                            editableTask = item
-//                                }
+                    }
                 }
                 .listStyle(.plain)
             }
@@ -44,11 +48,8 @@ struct TaskListView: View {
                 }
             }
             .sheet(isPresented: $viewModel.isShowingNewTaskView) {
-                NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView)
+                NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView, mode: .edit)
             }
-//            .sheet(item: $editableTask) { item in
-//                NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView, item: item, mode: .edit)
-//                }
         }
     }
 }
@@ -56,3 +57,7 @@ struct TaskListView: View {
 #Preview {
     TaskListView(userId: "tumTv7xUS0YP0uK12xxZwmt6WKw1")
 }
+
+//            .sheet(item: $theTask) { item in
+//                Text(item.title)
+//                }

@@ -9,9 +9,9 @@ import Foundation
 
 struct TaskItem: Codable, Identifiable {
     let id: String
-    let title: String
-    let dueDate: TimeInterval
-    let createdDate: TimeInterval
+    var title: String
+    var dueDate: TimeInterval
+    var createdDate: TimeInterval
     var isDone: Bool
     var isHighPriority: Bool
     var tag: String

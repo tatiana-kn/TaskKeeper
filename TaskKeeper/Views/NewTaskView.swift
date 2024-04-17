@@ -12,13 +12,13 @@ struct NewTaskView: View {
     @Binding var isNewTaskPresented: Bool
     @Environment(\.dismiss) var dismiss
     
-//    var item: TaskItem?
-//    
-//    enum Mode {
-//      case add
-//      case edit
-//    }
-//    var mode: Mode = .add
+//    @Binding var theTask: TaskItem
+    
+    enum Mode {
+      case add
+      case edit
+    }
+    var mode: Mode = .add
     
     var body: some View {
         NavigationView {
@@ -65,8 +65,8 @@ struct NewTaskView: View {
                           message: Text("Please fill in all fields and select due date"))
                 }
             }
-            .navigationTitle("New Task")
-//            .navigationTitle(mode == .add ? "New Task" : "Details")
+//            .navigationTitle("New Task")
+            .navigationTitle(mode == .add ? "New Task" : "Details")
             .toolbar {
                 ToolbarItem(placement: .primaryAction) {
                     Button("Cancel") {
@@ -78,7 +78,6 @@ struct NewTaskView: View {
     }
 }
 
-//#Preview {
-//    NewTaskView(isNewTaskPresented: .constant(true))
-//}
-
+#Preview {
+    NewTaskView(isNewTaskPresented: .constant(true))
+}
