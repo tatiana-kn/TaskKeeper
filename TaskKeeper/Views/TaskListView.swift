@@ -11,22 +11,17 @@ import SwiftUI
 struct TaskListView: View {
     @StateObject var viewModel: TaskListViewViewModel
     @FirestoreQuery var items: [TaskItem]
-    
-    @State private var selectedTask: TaskItem
-    
+        
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
         self._viewModel = StateObject(wrappedValue: TaskListViewViewModel(userId: userId))
-        self._selectedTask = State(initialValue: TaskItem(id: "", title: "", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: false, tag: ""))
     }
     
     var body: some View {
         NavigationView {
             VStack {
                 List(items) { item in
-                    NavigationLink(destination: TaskView(action: {
-                        selectedTask = item
-                    })) {
+                    NavigationLink(destination: TaskView(action: {}, task: item)) {
                         TaskListItemView(item: item)
                             .swipeActions{
                                 Button("Delete") {
@@ -61,3 +56,7 @@ struct TaskListView: View {
 //            .sheet(item: $theTask) { item in
 //                Text(item.title)
 //                }
+
+//    @State private var selectedTask: TaskItem?
+
+//        self._selectedTask = State(initialValue: TaskItem(id: "", title: "", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: false, tag: ""))

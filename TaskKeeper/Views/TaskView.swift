@@ -11,15 +11,16 @@ struct TaskView: View {
 
     @StateObject var viewModel = NewTaskViewViewModel()
     let action: () -> Void
+    @State var task: TaskItem
 
     
     var body: some View {
         VStack {
             Form {
-                TextField("Task title", text: $viewModel.title)
+                TextField("Task title", text: $task.title)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
-                TextField("Tag", text: $viewModel.tag)
+                TextField("Tag", text: $task.tag)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
                 DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
@@ -28,17 +29,17 @@ struct TaskView: View {
                     Text("Set High Priority")
                     Spacer()
                     
-                    Text(viewModel.isHighPriority ? "!" : "")
+                    Text(task.isHighPriority ? "!" : "")
                         .font(.title2)
                         .bold()
                         .foregroundStyle(.redish)
                     
                     Button {
-                        viewModel.isHighPriority.toggle()
+                        task.isHighPriority.toggle()
                     } label: {
-                        Image(systemName: viewModel.isHighPriority ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: task.isHighPriority ? "checkmark.circle.fill" : "circle")
                             .font(.title2)
-                            .foregroundStyle(viewModel.isHighPriority ? .redish : .minty)
+                            .foregroundStyle(task.isHighPriority ? .redish : .minty)
                     }
                 }
                 
@@ -51,9 +52,9 @@ struct TaskView: View {
     }
 }
 
-#Preview {
-    TaskView(action: {})
-}
+//#Preview {
+//    TaskView(action: {})
+//}
 
 //     @Binding var task: TaskItem
 //    @Binding var title: String
