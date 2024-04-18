@@ -24,14 +24,14 @@ struct TaskListView: View {
                     HStack {
                         TaskListItemView(item: item)
                             .swipeActions{
-                                NavigationLink("Edit") {
-                                    TaskEditView(taskId: item.id)
-                                }
-                                .tint(.lemon)
                                 Button("Delete") {
                                     viewModel.delete(id: item.id)
                                 }
                                 .tint(.redish)
+                                NavigationLink("Edit") {
+                                    TaskEditView(taskId: item.id)
+                                }
+                                .tint(.lemon)
                             }
                     }
                 }

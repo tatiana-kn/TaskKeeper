@@ -21,4 +21,26 @@ struct TaskItem: Codable, Identifiable {
     }
 }
 
+enum tagList: String, CaseIterable, Identifiable {
+    case toDo = "To Do"
+    case personal = "Personal"
+    case family = "Family"
+    case activities = "Activities"
+    case sport = "Sport"
+    case shopping = "Shopping"
+    case groceries = "Groceries"
+    case work = "Work"
+    case study = "Study"
+    case leisure = "Leisure"
+    
+    var id: String {
+        name
+    }
+    
+    var name: String {
+        rawValue
+    }
+}
+
+
 

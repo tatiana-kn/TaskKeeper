@@ -11,6 +11,8 @@ import SwiftUI
 struct TagsView: View {
     @StateObject var viewModel: TagsViewViewModel
     @FirestoreQuery var items: [TaskItem]
+//    var tag: tagList
+
     
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
@@ -21,7 +23,7 @@ struct TagsView: View {
         NavigationView {
             VStack {
                 List(items) { item in
-                    Text(item.tag)
+//                    Text(item.tag.description)
                 }
                 .listStyle(.plain)
             }

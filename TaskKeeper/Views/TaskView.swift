@@ -20,8 +20,11 @@ struct TaskView: View {
                 TextField("Task title", text: $title)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
-                TextField("Tag", text: $tag)
-                    .textFieldStyle(DefaultTextFieldStyle())
+                Picker("Tags", selection: $tag ) {
+                    ForEach(tagList.allCases) { tag in
+                        Text(tag.rawValue)
+                    }
+                }
                 
                 DatePicker("Due Date", selection: $dueDate, displayedComponents: [.date])
                 
@@ -53,5 +56,5 @@ struct TaskView: View {
 }
 
 #Preview {
-    TaskView(title: .constant("Test"), tag: .constant("123"), dueDate: .constant(Date()), isHighPriority: .constant(false), action: {})
+    TaskView(title: .constant("Test"), tag: .constant("To Do"), dueDate: .constant(Date()), isHighPriority: .constant(false), action: {})
 }
