@@ -21,7 +21,7 @@ struct TaskListView: View {
         NavigationView {
             VStack {
                 List(items) { item in
-                    NavigationLink(destination: TaskView(taskId: item.id)) {
+                    NavigationLink(destination: TaskEditView(taskId: item.id)) {
                         TaskListItemView(item: item)
                             .swipeActions{
                                 Button("Delete") {
@@ -43,7 +43,7 @@ struct TaskListView: View {
                 }
             }
             .sheet(isPresented: $viewModel.isShowingNewTaskView) {
-                NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView, mode: .edit)
+                NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView)
             }
         }
     }
@@ -53,10 +53,3 @@ struct TaskListView: View {
     TaskListView(userId: "tumTv7xUS0YP0uK12xxZwmt6WKw1")
 }
 
-//            .sheet(item: $theTask) { item in
-//                Text(item.title)
-//                }
-
-//    @State private var selectedTask: TaskItem?
-
-//        self._selectedTask = State(initialValue: TaskItem(id: "", title: "", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: false, tag: ""))

@@ -21,7 +21,4 @@ struct TaskItem: Codable, Identifiable {
     }
 }
 
-//struct Project: Codable, Identifiable {
-//    let id: String
-//    let title: String
-//}
+

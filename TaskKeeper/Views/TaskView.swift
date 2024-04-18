@@ -2,70 +2,56 @@
 //  TaskView.swift
 //  TaskKeeper
 //
-//  Created by Tia M on 4/17/24.
+//  Created by Tia M on 4/18/24.
 //
 
 import SwiftUI
 
 struct TaskView: View {
-
-    @StateObject var viewModel = TaskViewViewModel()
-    @State var taskId: String
-
+    @Binding var title: String
+    @Binding var tag: String
+    @Binding var dueDate: Date
+    @Binding var isHighPriority: Bool
+    let action: () -> Void
+    
     var body: some View {
         VStack {
             Form {
-                Text(taskId)
-                TextField("Task title", text: $viewModel.title)
+                TextField("Task title", text: $title)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
-                TextField("Tag", text: $viewModel.tag)
+                TextField("Tag", text: $tag)
                     .textFieldStyle(DefaultTextFieldStyle())
                 
-                DatePicker("Due Date", selection: $viewModel.dueDate, displayedComponents: [.date])
+                DatePicker("Due Date", selection: $dueDate, displayedComponents: [.date])
                 
                 HStack {
                     Text("Set High Priority")
                     Spacer()
                     
-                    Text(viewModel.isHighPriority ? "!" : "")
+                    Text(isHighPriority ? "!" : "")
                         .font(.title2)
                         .bold()
                         .foregroundStyle(.redish)
                     
                     Button {
-                        viewModel.isHighPriority.toggle()
+                        isHighPriority.toggle()
                     } label: {
-                        Image(systemName: viewModel.isHighPriority ? "checkmark.circle.fill" : "circle")
+                        Image(systemName: isHighPriority ? "checkmark.circle.fill" : "circle")
                             .font(.title2)
-                            .foregroundStyle(viewModel.isHighPriority ? .redish : .minty)
+                            .foregroundStyle(isHighPriority ? .redish : .minty)
                     }
                 }
                 
                 TKButton(title: "Save", background: .minty) {
-                    if viewModel.canSave {
-                        viewModel.update(itemId: taskId)
-                    } else {
-                        viewModel.showAlert = true
-                    }
+                    action()
                 }
                 .padding()
             }
         }
-        .onAppear {
-            viewModel.loadTask(taskId: taskId)
-        }
-
     }
 }
 
-//#Preview {
-//    TaskView(action: {})
-//}
-
-//     @Binding var task: TaskItem
-//    @Binding var title: String
-//    @Binding var tag: String
-//    @Binding var dueDate: Date
-//    @Binding var priority: Bool
-//    @Binding var isPresented: Bool
+#Preview {
+    TaskView(title: .constant("Test"), tag: .constant("123"), dueDate: .constant(Date()), isHighPriority: .constant(false), action: {})
+}

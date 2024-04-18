@@ -9,7 +9,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class TaskViewViewModel: ObservableObject {
+class TaskEditViewViewModel: ObservableObject {
     @Published var title = ""
     @Published var dueDate = Date()
     @Published var showAlert = false
@@ -30,9 +30,14 @@ class TaskViewViewModel: ObservableObject {
                 guard let data = snapshot?.data(), error == nil else { return }
                 
                 DispatchQueue.main.async {
-                    self?.title = data["title"] as? String ?? "??"
-//                    self?.dueDate = data["dueDate"] as? TimeInterval ?? 0
+                    self?.title = data["title"] as? String ?? ""
+                    if let dueDateInterval = data["dueDate"] as? TimeInterval {
+                        self?.dueDate = Date(timeIntervalSince1970: dueDateInterval)
+                    } else {
+                        self?.dueDate = Date()
+                    }
                     self?.isHighPriority = data["isHighPriority"] as? Bool ?? false
+                    self?.tag = data["tag"] as? String ?? ""
                 }
             }
     }
@@ -45,7 +50,7 @@ class TaskViewViewModel: ObservableObject {
             id: itemId,
             title: title,
             dueDate: dueDate.timeIntervalSince1970,
-            createdDate: Date().timeIntervalSince1970,
+            createdDate: dueDate.timeIntervalSince1970,
             isDone: false,
             isHighPriority: isHighPriority,
             tag: tag
