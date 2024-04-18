@@ -14,6 +14,19 @@ struct TaskListItemView: View {
     
     var body: some View {
         HStack {
+            Button {
+                viewModel.toggleIsDone(item: item)
+            } label: {
+                Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .font(.title)
+                    .foregroundStyle(item.isDone ? .minty : .lemon)
+            }
+            
+            Text(item.isHighPriority ? "!" : " ")
+                .font(.title)
+                .bold()
+                .foregroundStyle(item.isDone ? .minty : .redish)
+            
             VStack(alignment: .leading ) {
                 Text(item.title)
                     .font(.title3)
@@ -22,19 +35,6 @@ struct TaskListItemView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
-            
-            Text(item.isHighPriority ? "!" : "")
-                .font(.title2)
-                .bold()
-                .foregroundStyle(.redish)
-            
-            Button {
-                viewModel.toggleIsDone(item: item)
-            } label: {
-                Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.title2)
-                    .foregroundStyle(item.isDone ? .minty : .lemon)
-            }
         }
     }
 }
@@ -42,3 +42,4 @@ struct TaskListItemView: View {
 #Preview {
     TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true, tag: "personal"))
 }
+

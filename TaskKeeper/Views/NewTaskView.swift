@@ -27,6 +27,10 @@ struct NewTaskView: View {
                     }
                 }
             }
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(title: Text("Error"),
+                      message: Text("Please fill in all fields"))
+            }
         }
     }
     
