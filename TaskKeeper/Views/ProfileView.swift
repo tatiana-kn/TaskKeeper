@@ -17,9 +17,8 @@ struct ProfileView: View {
                 
                 if let user = viewModel.user {
                     profile(user: user)
-                    
                 } else {
-                    Text("Loading Profile...")
+                    ProgressView("Loading profile...")
                 }
             }
             .navigationTitle("Profile")

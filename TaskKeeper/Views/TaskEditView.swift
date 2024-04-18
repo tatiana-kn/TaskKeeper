@@ -14,7 +14,6 @@ struct TaskEditView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        
         TaskView(title: $viewModel.title,
                  tag: $viewModel.tag,
                  dueDate: $viewModel.dueDate,
@@ -27,6 +26,10 @@ struct TaskEditView: View {
         .alert(isPresented: $viewModel.showAlert) {
             Alert(title: Text("Can't update the task"),
                   message: Text("Please fill in all fields"))
+        }
+        if viewModel.isLoading {
+            ProgressView("Loading task...")
+                .padding(.bottom, 150)
         }
     }
     

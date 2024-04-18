@@ -16,6 +16,8 @@ class TaskEditViewViewModel: ObservableObject {
     @Published var isHighPriority = false
     @Published var tag = ""
     
+    @Published var isLoading = true
+    
     init() {}
     
     func loadTask(taskId: String) {
@@ -38,6 +40,8 @@ class TaskEditViewViewModel: ObservableObject {
                     }
                     self?.isHighPriority = data["isHighPriority"] as? Bool ?? false
                     self?.tag = data["tag"] as? String ?? ""
+                    
+                    self?.isLoading = false
                 }
             }
     }
