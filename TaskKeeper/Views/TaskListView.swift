@@ -19,24 +19,26 @@ struct TaskListView: View {
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List(items) { item in
-                    HStack {
+            
+            List {
+                Section("Active Tasks") {
+                    ForEach(items.filter { !$0.isDone }) { item in
                         TaskListItemView(item: item)
                             .swipeActions{
-                                Button("Delete") {
-                                    viewModel.delete(id: item.id)
-                                }
-                                .tint(.redish)
-                                NavigationLink("Edit") {
-                                    TaskEditView(taskId: item.id)
-                                }
-                                .tint(.lemon)
+                                editMenu(item: item)
                             }
                     }
                 }
-                .listStyle(.plain)
+                Section("Completed Tasks") {
+                    ForEach(items.filter { $0.isDone }) { item in
+                        TaskListItemView(item: item)
+                            .swipeActions{
+                                editMenu(item: item)
+                            }
+                    }
+                }
             }
+            .listStyle(.plain)
             .navigationTitle("Tasks")
             .toolbar {
                 Button{
@@ -49,8 +51,18 @@ struct TaskListView: View {
             .sheet(isPresented: $viewModel.isShowingNewTaskView) {
                 NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView)
             }
-            
         }
+    }
+    @ViewBuilder
+    func editMenu(item: TaskItem) -> some View {
+        Button("Delete") {
+            viewModel.delete(id: item.id)
+        }
+        .tint(.redish)
+        NavigationLink("Edit") {
+            TaskEditView(taskId: item.id)
+        }
+        .tint(.lemon)
     }
 }
 

@@ -26,7 +26,7 @@ struct MainView: View {
                     Label("Home", systemImage: "house")
                 }
             
-            TagsView(userId: viewModel.currentUserId)
+            TagsView(userId: viewModel.currentUserId, tag: tagList.family)
                 .tabItem {
                     Label("Tags", systemImage: "house")
                 }

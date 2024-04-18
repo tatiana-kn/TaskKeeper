@@ -14,7 +14,7 @@ class NewTaskViewViewModel: ObservableObject {
     @Published var dueDate = Date()
     @Published var showAlert = false
     @Published var isHighPriority = false
-    @Published var tag = ""
+    @Published var tag = tagList.toDo.rawValue
     
     init() {}
     

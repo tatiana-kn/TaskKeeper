@@ -35,6 +35,10 @@ struct TaskListItemView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
+            Text(item.tag.capitalized)
+                .font(.callout)
+                .foregroundStyle(.secondary)
+                .padding(.trailing, 20)
         }
     }
 }
