@@ -5,7 +5,7 @@
 //  Created by Tia M on 4/15/24.
 //
 
-import Foundation
+import SwiftUI
 
 struct TaskItem: Codable, Identifiable {
     let id: String
@@ -40,7 +40,34 @@ enum tagList: String, CaseIterable, Identifiable {
     var name: String {
         rawValue
     }
+    
+    var color: Color {
+        switch self {
+        case .toDo:
+            Theme.grass.mainColor
+        case .personal:
+            Theme.redish.mainColor
+        case .family:
+            Theme.lemon.mainColor
+        case .activities:
+            Theme.sky.mainColor
+        case .sport:
+            Theme.minty.mainColor
+        case .shopping:
+            Theme.pinky.mainColor
+        case .groceries:
+            Theme.lilac.mainColor
+        case .work:
+            Theme.violet.mainColor
+        case .study:
+            Theme.navy.mainColor
+        case .leisure:
+            Theme.ice.mainColor
+        }
+    }
 }
+
+
 
 
 

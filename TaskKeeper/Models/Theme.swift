@@ -17,6 +17,7 @@ enum Theme: String {
     case lilac
     case violet
     case navy
+    case ice
     
     var mainColor: Color {
         Color(rawValue)

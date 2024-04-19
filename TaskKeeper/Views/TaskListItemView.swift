@@ -35,15 +35,24 @@ struct TaskListItemView: View {
                     .foregroundStyle(.secondary)
             }
             Spacer()
-            Text(item.tag.capitalized)
-                .font(.callout)
-                .foregroundStyle(.secondary)
-                .padding(.trailing, 20)
+            ZStack {
+                RoundedRectangle(cornerRadius: 20)
+                    .frame(width: 80, height: 30)
+                    .foregroundStyle(tagList(rawValue: item.tag)?.color ?? .lemon)
+                    .opacity(0.9)
+                
+                Text(item.tag.capitalized)
+                    .font(.subheadline)
+                    .foregroundStyle(.white)
+            }
+            .padding(.trailing, 20)
+            
+            
         }
     }
 }
 
 #Preview {
-    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true, tag: "personal"))
+    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true, tag: "Personal"))
 }
 

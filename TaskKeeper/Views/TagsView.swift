@@ -21,13 +21,15 @@ struct TagsView: View {
         NavigationView {
             List {
                 ForEach(tagList.allCases) { tag in
-                    Section("\(tag.rawValue)") {
-                        Text("Tasks: \(items.filter { $0.tag == tag.rawValue }.count)")
+                    Section(tag.name) {
+                        ForEach(items.filter { $0.tag == tag.rawValue }) { item in
+                            TaskListItemView(item: item)
+                        }
                     }
                 }
             }
             .listStyle(.plain)
-            .navigationTitle("Tasks")
+            .navigationTitle("Active Tasks")
         }
     }
 }
@@ -35,3 +37,4 @@ struct TagsView: View {
 #Preview {
     TagsView(userId: "tumTv7xUS0YP0uK12xxZwmt6WKw1", tag: tagList.toDo)
 }
+
