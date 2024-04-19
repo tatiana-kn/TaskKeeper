@@ -9,28 +9,26 @@ import FirebaseFirestoreSwift
 import SwiftUI
 
 struct TagsView: View {
-    @StateObject var viewModel: TagsViewViewModel
+    @StateObject var viewModel: TaskListViewViewModel
     @FirestoreQuery var items: [TaskItem]
-    var tag: tagList
-
     
     init(userId: String, tag: tagList) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
-        self._viewModel = StateObject(wrappedValue: TagsViewViewModel(userId: userId))
-        self.tag = tag
-
+        self._viewModel = StateObject(wrappedValue: TaskListViewViewModel(userId: userId))
     }
     
     var body: some View {
         NavigationView {
-            VStack {
-                List(items) { item in
-                    TaskListItemView(item: item)
+            List {
+                ForEach(tagList.allCases) { tag in
+                    Section("\(tag.rawValue)") {
+                        Text("Tasks: \(items.filter { $0.tag == tag.rawValue }.count)")
+                    }
                 }
-                .listStyle(.plain)
             }
+            .listStyle(.plain)
+            .navigationTitle("Tasks")
         }
-        
     }
 }
 
