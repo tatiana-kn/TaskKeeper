@@ -14,6 +14,19 @@ struct TaskListItemView: View {
     
     var body: some View {
         HStack {
+            Button {
+                viewModel.toggleIsDone(item: item)
+            } label: {
+                Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
+                    .font(.title)
+                    .foregroundStyle(item.isDone ? .minty : .lemon)
+            }
+            
+            Text(item.isHighPriority ? "!" : " ")
+                .font(.title)
+                .bold()
+                .foregroundStyle(item.isDone ? .minty : .redish)
+            
             VStack(alignment: .leading ) {
                 Text(item.title)
                     .font(.title3)
@@ -23,22 +36,16 @@ struct TaskListItemView: View {
             }
             Spacer()
             
-            Text(item.isHighPriority ? "!" : "")
-                .font(.title2)
-                .bold()
-                .foregroundStyle(.redish)
+            TagTabView(opacity: 0.9,
+                       color: tagList(rawValue: item.tag)?.color ?? .lemon,
+                       tagName: item.tag.capitalized)
+            .padding(.trailing, 20)
             
-            Button {
-                viewModel.toggleIsDone(item: item)
-            } label: {
-                Image(systemName: item.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.title2)
-                    .foregroundStyle(item.isDone ? .minty : .lemon)
-            }
         }
     }
 }
 
 #Preview {
-    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: false, isHighPriority: true))
+    TaskListItemView(item: .init(id: "123", title: "Get sleep", dueDate: Date().timeIntervalSince1970, createdDate: Date().timeIntervalSince1970, isDone: true, isHighPriority: true, tag: "Personal"))
 }
+

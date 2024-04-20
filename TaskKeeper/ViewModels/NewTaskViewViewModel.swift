@@ -9,11 +9,12 @@ import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class NewTaskViewViewModel: ObservableObject {
+final class NewTaskViewViewModel: ObservableObject {
     @Published var title = ""
     @Published var dueDate = Date()
     @Published var showAlert = false
     @Published var isHighPriority = false
+    @Published var tag = tagList.toDo.rawValue
     
     init() {}
     
@@ -21,22 +22,24 @@ class NewTaskViewViewModel: ObservableObject {
         guard canSave else { return }
         guard let uId = Auth.auth().currentUser?.uid else { return }
         
-        let newId = UUID().uuidString
-        let newItem = TaskItem(
-            id: newId,
-            title: title,
-            dueDate: dueDate.timeIntervalSince1970,
-            createdDate: Date().timeIntervalSince1970,
-            isDone: false,
-            isHighPriority: isHighPriority
-        )
-        
-        let db = Firestore.firestore()
-        db.collection("users")
-            .document(uId)
-            .collection("todos")
-            .document(newId)
-            .setData(newItem.asDictionary())
+            let newId = UUID().uuidString
+            let newItem = TaskItem(
+                id: newId,
+                title: title,
+                dueDate: dueDate.timeIntervalSince1970,
+                createdDate: Date().timeIntervalSince1970,
+                isDone: false,
+                isHighPriority: isHighPriority,
+                tag: tag
+            )
+            
+            let db = Firestore.firestore()
+            db.collection("users")
+                .document(uId)
+                .collection("todos")
+                .document(newId)
+                .setData(newItem.asDictionary())
+
     }
     
     var canSave: Bool {

@@ -8,7 +8,7 @@
 import Foundation
 import FirebaseAuth
 
-class LoginViewViewModel: ObservableObject {
+final class LoginViewViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var errorMessage = ""
