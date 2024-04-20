@@ -23,11 +23,11 @@ TaskKeeper is an iOS mobile app for making to-do lists.
 - allows you to filter tasks based on their tag names. Each tag has a unique color theme.
 - new task screen sets the task's title, tag, due date, and priority
 
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/f6eb027c-762d-43e3-8a15-348ef8959ad6" height="350" alt="screenshot_5">  
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/bc2fdae5-ab3c-49df-b337-8c5061c61b49" height="350" alt="screenshot_5">  
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/505632d7-f435-4bc5-9347-45c321be976b" height="350" alt="screenshot_5">  
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/09c4d879-e93c-4182-8c1f-727797a1f92f" height="350" alt="screenshot_6">  
-<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/6757a10e-751e-4973-868b-71d9e1d2b6f2" height="350" alt="screenshot_7">
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/df98b49e-3960-40f7-a900-b2546ebd436c" height="350" alt="screenshot_5"> 
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/b7e97e03-ed0d-473e-b24c-d5e53f69db21" height="350" alt="screenshot_6">  
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/0fea7ff3-7b73-4b59-8981-63f8509cebcb" height="350" alt="screenshot_5"> 
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/505632d7-f435-4bc5-9347-45c321be976b" height="350" alt="screenshot_5"> 
+<img src="https://github.com/tatiana-kn/TaskKeeper/assets/123388284/faa2749b-fdd9-4009-8cc9-126b32de4b0a" height="350" alt="screenshot_7">
 
 #### Profile screen
 - shows user information
