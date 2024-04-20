@@ -29,6 +29,7 @@ struct TaskListView: View {
                 }
                 tagScrollView()
             }
+            .padding(.horizontal, 8)
             List {
                 taskSection(for: items, name: "Active Tasks", isDone: false)
                 taskSection(for: items, name: "Completed Tasks", isDone: true)
