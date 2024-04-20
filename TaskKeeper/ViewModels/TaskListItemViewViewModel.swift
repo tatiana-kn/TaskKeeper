@@ -9,7 +9,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import Foundation
 
-class TaskListItemViewViewModel: ObservableObject {
+final class TaskListItemViewViewModel: ObservableObject {
     init() {}
     
     func toggleIsDone(item: TaskItem) {

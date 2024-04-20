@@ -8,7 +8,7 @@
 import FirebaseFirestore
 import Foundation
 
-class TaskListViewViewModel: ObservableObject {
+final class TaskListViewViewModel: ObservableObject {
     @Published var isShowingNewTaskView = false
 
     private let userId: String

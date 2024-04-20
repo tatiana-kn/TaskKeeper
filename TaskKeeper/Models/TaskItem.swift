@@ -26,7 +26,6 @@ enum tagList: String, CaseIterable, Identifiable {
     case personal = "Personal"
     case family = "Family"
     case activities = "Activities"
-    case sport = "Sport"
     case shopping = "Shopping"
     case groceries = "Groceries"
     case work = "Work"
@@ -48,11 +47,9 @@ enum tagList: String, CaseIterable, Identifiable {
         case .personal:
             Theme.redish.mainColor
         case .family:
-            Theme.lemon.mainColor
+            Theme.minty.mainColor
         case .activities:
             Theme.sky.mainColor
-        case .sport:
-            Theme.minty.mainColor
         case .shopping:
             Theme.pinky.mainColor
         case .groceries:
