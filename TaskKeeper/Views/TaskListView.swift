@@ -10,10 +10,7 @@ import SwiftUI
 
 struct TaskListView: View {
     @StateObject var viewModel: TaskListViewViewModel
-    @FirestoreQuery var items: [TaskItem]
-    @State private var pickedTag: String?
-    
-    private let taskStatus = ["Active Tasks": false, "Completed Tasks": true]
+    @FirestoreQuery var items: [TaskItem]    
     
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
@@ -24,9 +21,9 @@ struct TaskListView: View {
         NavigationStack {
             HStack {
                 Button {
-                    pickedTag = nil
+                    viewModel.pickedTag = nil
                 } label: {
-                    TagTabView(opacity: (pickedTag == nil ? 0.9 : 0.4),
+                    TagTabView(opacity: (viewModel.pickedTag == nil ? 0.9 : 0.4),
                                color: .teal,
                                tagName: "All")
                 }
@@ -35,23 +32,37 @@ struct TaskListView: View {
             .padding()
             
             List {
-                ForEach(taskStatus.keys.sorted(), id: \.self) { key in
-                    taskSection(for: items, name: key, isDone: taskStatus[key] ?? true)
-                }
+                taskSection(for: items, name: "Active Tasks", isDone: false)
+                taskSection(for: items, name: "Completed Tasks", isDone: true)
             }
             .listStyle(.plain)
             .navigationTitle("Tasks")
             .toolbar {
+                Button {
+                    viewModel.showAlert = true
+                } label: {
+                    Image(systemName: "rectangle.stack.badge.minus")
+                        .tint(.redish)
+                }
+                
+                Spacer()
                 Button{
                     viewModel.isShowingNewTaskView = true
                 } label: {
                     Image(systemName: "plus")
-                        .font(.title)
                 }
             }
             .sheet(isPresented: $viewModel.isShowingNewTaskView) {
                 NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView)
             }
+        }
+        .alert(isPresented: $viewModel.showAlert) {
+            Alert(
+                title: Text("Attention!"),
+                message: Text("Are you sure you want to delete ALL completed tasks?"),
+                primaryButton: .destructive(Text("Delete"), action: deleteCompletedTasks),
+                secondaryButton: .cancel()
+            )
         }
     }
     
@@ -61,9 +72,9 @@ struct TaskListView: View {
             HStack {
                 ForEach(tagList.allCases, id: \.self) { tag in
                     Button {
-                        pickedTag = tag.name
+                        viewModel.pickedTag = tag.name
                     } label: {
-                        TagTabView(opacity: (pickedTag == tag.name ? 0.9 : 0.4),
+                        TagTabView(opacity: (viewModel.pickedTag == tag.name ? 0.9 : 0.4),
                                    color: tag.color,
                                    tagName: tag.name.capitalized)
                     }
@@ -97,9 +108,15 @@ struct TaskListView: View {
     }
     
     private func isTagPicked(_ item: TaskItem) -> Bool {
-        pickedTag == nil || item.tag == pickedTag
+        viewModel.pickedTag == nil || item.tag == viewModel.pickedTag
     }
     
+    private func deleteCompletedTasks() {
+        let completedTasks = items.filter { $0.isDone }
+        let completedTaskIds = completedTasks.map { $0.id }
+        
+        viewModel.deleteGroupOfTasks(ids: completedTaskIds)
+    }
 }
 
 #Preview {

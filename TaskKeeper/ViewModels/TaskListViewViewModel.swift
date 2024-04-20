@@ -10,6 +10,8 @@ import Foundation
 
 final class TaskListViewViewModel: ObservableObject {
     @Published var isShowingNewTaskView = false
+    @Published var showAlert = false
+    @Published var pickedTag: String?
 
     private let userId: String
     
@@ -25,5 +27,11 @@ final class TaskListViewViewModel: ObservableObject {
             .collection("todos")
             .document(id)
             .delete()
+    }
+    
+    func deleteGroupOfTasks(ids: [String]) {
+        for id in ids {
+            delete(id: id)
+        }
     }
 }
