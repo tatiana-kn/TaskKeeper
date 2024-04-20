@@ -10,7 +10,7 @@ import SwiftUI
 
 struct TaskListView: View {
     @StateObject var viewModel: TaskListViewViewModel
-    @FirestoreQuery var items: [TaskItem]    
+    @FirestoreQuery var items: [TaskItem]
     
     init(userId: String) {
         self._items = FirestoreQuery(collectionPath: "users/\(userId)/todos")
@@ -29,8 +29,6 @@ struct TaskListView: View {
                 }
                 tagScrollView()
             }
-            .padding()
-            
             List {
                 taskSection(for: items, name: "Active Tasks", isDone: false)
                 taskSection(for: items, name: "Completed Tasks", isDone: true)
@@ -44,25 +42,27 @@ struct TaskListView: View {
                     Image(systemName: "rectangle.stack.badge.minus")
                         .tint(.redish)
                 }
-                
                 Spacer()
                 Button{
                     viewModel.isShowingNewTaskView = true
                 } label: {
                     Image(systemName: "plus")
+                        .tint(.minty)
+                        .font(.title)
+                        .bold()
                 }
             }
             .sheet(isPresented: $viewModel.isShowingNewTaskView) {
                 NewTaskView(isNewTaskPresented: $viewModel.isShowingNewTaskView)
             }
-        }
-        .alert(isPresented: $viewModel.showAlert) {
-            Alert(
-                title: Text("Attention!"),
-                message: Text("Are you sure you want to delete ALL completed tasks?"),
-                primaryButton: .destructive(Text("Delete"), action: deleteCompletedTasks),
-                secondaryButton: .cancel()
-            )
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(
+                    title: Text("Attention!"),
+                    message: Text("Are you sure you want to delete ALL completed tasks?"),
+                    primaryButton: .destructive(Text("Delete"), action: deleteCompletedTasks),
+                    secondaryButton: .cancel()
+                )
+            }
         }
     }
     
